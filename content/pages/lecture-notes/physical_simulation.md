@@ -110,7 +110,7 @@ _class Ball {_
  _float G1, G2;  // Growth factors._
 
  _// Determine the eigenvalues._  
- _if (fXi < 1.0f) {_  
+ _if (fXi \< 1.0f) {_  
  _fReal1 = fReal2 = -fW0\*fXi;_  
  _fImag1 = (float)(fW0\*Math.sqrt(1-fXi\*fXi));_  
  _fImag2 = -fImag1;_  

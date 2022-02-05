@@ -49,7 +49,7 @@ _class Stack implements Collection {           // A last in first out 
 
  _// This adds an element to the top of the stack._  
  _public void add(Object obj) {_  
- _if (mVector.size() < MAXIMUM)     // Restrict the size of the Stack._  
+ _if (mVector.size() \< MAXIMUM)     // Restrict the size of the Stack._  
  _mVector.insertElementAt(obj, 0);_  
  _else_  
  _System.out.println("Reached maximum size");_  
@@ -63,7 +63,7 @@ _class Stack implements Collection {           // A last in first out 
  _// This prints out the stack in order from top to bottom._  
  _public void print() {_  
  _System.out.println("Printing out the stack");_  
- _for (int i = 0; i < mVector.size(); i++)_  
+ _for (int i = 0; i \< mVector.size(); i++)_  
  _System.out.println(mVector.elementAt(i));_  
  _}_  
 _}_
@@ -77,7 +77,7 @@ _class Queue implements Collection {           // A first in first out
 
  _// This adds an element to the bottom of the queue._  
  _public void add(Object obj) {_  
- _if (mVector.size() < MAXIMUM)      // Restrict the size of the Queue._  
+ _if (mVector.size() \< MAXIMUM)      // Restrict the size of the Queue._  
  _mVector.addElement(obj);_  
  _else_  
  _System.out.println("Reached maximum size");_  
@@ -91,7 +91,7 @@ _class Queue implements Collection {           // A first in first out
  _// This prints out the queue in order from top to bottom._  
  _public void print() {_  
  _System.out.println("Printing out the queue");_  
- _for (int i = 0; i < mVector.size(); i++)_  
+ _for (int i = 0; i \< mVector.size(); i++)_  
  _System.out.println(mVector.elementAt(i));_  
  _}_  
 _}_  
@@ -147,7 +147,7 @@ _class LetterTest {_
  _int k;_
 
  _k = System.in.read();_  
- _if (k < 'A' || k > 'z') {_  
+ _if (k \< 'A' || k > 'z') {_  
  _throw new Exception();                  // Throw an exception._  
  _}_
 

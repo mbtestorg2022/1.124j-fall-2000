@@ -60,10 +60,10 @@ _}_
 _void selection(ItemType a\[\], int N) {_  
  _int i, j, min;_
 
- _for (i = 1; i < N; i++) {_  
+ _for (i = 1; i \< N; i++) {_  
  _min = i;_  
- _for (j = i+1; j <= N; j++)_  
- _if (a\[j\] < a\[min\])_  
+ _for (j = i+1; j \<= N; j++)_  
+ _if (a\[j\] \< a\[min\])_  
  _min = j;_  
  _swap(a,min,i);_  
  _}_  
@@ -95,7 +95,7 @@ _void insertion(ItemType a\[\], int N) {_
  _int i, j;_  
  _ItemType v;_
 
- _for (i = 2; i <= N; i++) {_  
+ _for (i = 2; i \<= N; i++) {_  
  _v = a\[i\];_  
  _j = i;_  
  _while (a\[j-1\] > v) {_  
@@ -106,7 +106,7 @@ _void insertion(ItemType a\[\], int N) {_
  _}_  
 _}_
 
-It is important to note that there is no test in the while loop to prevent the index _j_ from running out of bounds. This could happen if _v_ is smaller than _a\[1\],a\[2\],...,a\[i-1\]_. To remedy this situation, we place a _sentinel_ key in _a\[0\]_, making it at least as small as the smallest element in the array. The use of a sentinel is more efficient than performing a test of the form _while (j > 1 &&  a\[j-1\] > v)_. Insertion sort is an _O(N2)_ method both in the average case and in the worst case. For this reason, it is most effectively used on files with roughly _N < 20_. However, in the special case of an almost sorted file, insertion sort requires only _linear_ time.
+It is important to note that there is no test in the while loop to prevent the index _j_ from running out of bounds. This could happen if _v_ is smaller than _a\[1\],a\[2\],...,a\[i-1\]_. To remedy this situation, we place a _sentinel_ key in _a\[0\]_, making it at least as small as the smallest element in the array. The use of a sentinel is more efficient than performing a test of the form _while (j > 1 &&  a\[j-1\] > v)_. Insertion sort is an _O(N2)_ method both in the average case and in the worst case. For this reason, it is most effectively used on files with roughly _N \< 20_. However, in the special case of an almost sorted file, insertion sort requires only _linear_ time.
 
 {{< anchor "Shell" >}}{{< /anchor >}}5\. Shell Sort
 ---------------------------------------------------
@@ -137,10 +137,10 @@ _void shell(ItemType a\[\], int N) {_
  _int i, j, h;_  
  _ItemType v;_
 
- _for (h = 1; h < = N/9; h = 3\*h+1);_
+ _for (h = 1; h \< = N/9; h = 3\*h+1);_
 
  _for (; h > 0; h /= 3)_  
- _for (i = h+1; i <= N; i++) {_  
+ _for (i = h+1; i \<= N; i++) {_  
  _v = a\[i\];_  
  _j = i;_  
  _while (j > h && a\[j-h\] > v) {_  
@@ -151,7 +151,7 @@ _void shell(ItemType a\[\], int N) {_
  _}_  
 _}_
 
-Shell sort requires _O(N3/2)_ operations in the worst case, which means that it can be quite effectively used even for moderately large files (say _N < 5000_).
+Shell sort requires _O(N3/2)_ operations in the worst case, which means that it can be quite effectively used even for moderately large files (say _N \< 5000_).
 
 {{< anchor "Quick" >}}{{< /anchor >}}6\. Quicksort
 --------------------------------------------------
@@ -191,7 +191,7 @@ _void quicksort(ItemType a\[\], int left, int right) {_
  _i = left - 1;_  
  _j = right;_  
  _for (;;) {_  
- _while (a\[++i\] < v);_  
+ _while (a\[++i\] \< v);_  
  _while (a\[--j\] > v);_  
  _if (i >= j) break;_  
  _swap(a,i,j);_  
@@ -212,10 +212,70 @@ Note that this code requires a sentinel key in _a\[0\]_ to stop the right-to-lef
 {{< anchor "Algorithm" >}}{{< /anchor >}}7\. Choosing a Sorting Algorithm
 -------------------------------------------------------------------------
 
-Table 1 summarizes the performance characteristics of some common sorting algorithms. Shell sort is usually a good starting choice for moderately large files _N < 5000_, since it is easily implemented. Bubble sort, which is included in Table 1 for comparison purposes only, is generally best avoided. Insertion sort requires linear time for _almost sorted_ files, while selection sort requires linear time for files with large records and small keys. Insertion sort and selection sort should otherwise be limited to small files. Quicksort is the method to use for very large sorting problems. However, its performance may be significantly affected by subtle implementation errors. Furthermore, quicksort performs badly if the file is already sorted. Another possible disadvantage is that quicksort is not stable i.e. it does not preserve the relative order of equal keys. All of the above sorting algorithms are in-place methods. Quicksort requires a small amount of additional memory for the auxiliary stack. There are a few other sorting methods which we have not considered. Heapsort requires _O(N log N)_ steps both in the average case and the worst case, but it is about twice as slow as quicksort on average. Mergesort is another _O(N log N)_ algorithm in the average and worst cases. Mergesort is the method of choice for sorting _linked lists_, where sequential access is required.
+Table 1 summarizes the performance characteristics of some common sorting algorithms. Shell sort is usually a good starting choice for moderately large files _N \< 5000_, since it is easily implemented. Bubble sort, which is included in Table 1 for comparison purposes only, is generally best avoided. Insertion sort requires linear time for _almost sorted_ files, while selection sort requires linear time for files with large records and small keys. Insertion sort and selection sort should otherwise be limited to small files. Quicksort is the method to use for very large sorting problems. However, its performance may be significantly affected by subtle implementation errors. Furthermore, quicksort performs badly if the file is already sorted. Another possible disadvantage is that quicksort is not stable i.e. it does not preserve the relative order of equal keys. All of the above sorting algorithms are in-place methods. Quicksort requires a small amount of additional memory for the auxiliary stack. There are a few other sorting methods which we have not considered. Heapsort requires _O(N log N)_ steps both in the average case and the worst case, but it is about twice as slow as quicksort on average. Mergesort is another _O(N log N)_ algorithm in the average and worst cases. Mergesort is the method of choice for sorting _linked lists_, where sequential access is required.
 
 Table 1: Approximate running times for various sorting algorithms
 
-| METHOD | \# COMPARISONS - AVERAGE CASE | \# COMPARISONS - WORST CASE | \# EXCHANGES - AVERAGE CASE | \# EXCHANGES - WORST CASE |
-| --- | --- | --- | --- | --- |
-| Selection sort  {{< br >}}Insertion sort  {{< br >}}Bubble sort  {{< br >}}Shell sort  {{< br >}}Quicksort | N2/2  {{< br >}}N2/4  {{< br >}}N2/2  {{< br >}}~N.1.25  {{< br >}}2 N ln N   {{< br >}}(1.38 N log2 N) | N2/2  {{< br >}}N2/2  {{< br >}}N2/2  {{< br >}}N3/2  {{< br >}}N2/2 | N  {{< br >}}N2/8  {{< br >}}N2/2  {{< br >}}?  {{< br >}}N | N  {{< br >}}N2/4  {{< br >}}N2/2  {{< br >}}?  {{< br >}}N
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+METHOD
+{{< thclose >}}
+{{< thopen >}}
+\# COMPARISONS - AVERAGE CASE
+{{< thclose >}}
+{{< thopen >}}
+\# COMPARISONS - WORST CASE
+{{< thclose >}}
+{{< thopen >}}
+\# EXCHANGES - AVERAGE CASE
+{{< thclose >}}
+{{< thopen >}}
+\# EXCHANGES - WORST CASE
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Selection sort  
+Insertion sort  
+Bubble sort  
+Shell sort  
+Quicksort
+{{< tdclose >}}
+{{< tdopen >}}
+N2/2  
+N2/4  
+N2/2  
+~N.1.25  
+2 N ln N   
+(1.38 N log2 N)
+{{< tdclose >}}
+{{< tdopen >}}
+N2/2  
+N2/2  
+N2/2  
+N3/2  
+N2/2
+{{< tdclose >}}
+{{< tdopen >}}
+N  
+N2/8  
+N2/2  
+?  
+N
+{{< tdclose >}}
+{{< tdopen >}}
+N  
+N2/4  
+N2/2  
+?  
+N
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}

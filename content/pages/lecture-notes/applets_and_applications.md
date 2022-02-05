@@ -123,7 +123,7 @@ _}_
 
 _mypage.html_
 
-_<HTML>_
+_\<HTML>_
 
-_<APPLET CODE=MyApp.class WIDTH=400 HEIGHT=400>_  
-_</APPLET>_
+_\<APPLET CODE=MyApp.class WIDTH=400 HEIGHT=400>_  
+_\</APPLET>_

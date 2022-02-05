@@ -143,7 +143,7 @@ _class Threadtest {_
  _t.start();_
 
  _// The main thread proceeds to print out a sequence of integers of its own, one every second._  
- _for (int i = 0; i < 6; i++) {_  
+ _for (int i = 0; i \< 6; i++) {_  
  _System.out.println(Thread.currentThread().getName() + ": " + i);_  
  _// Tell the main thread to sleep for a second._  
  _try {_  
@@ -165,11 +165,11 @@ Here is an example of a simple animation. We have used a separate thread to con
 
 _**anim.html**_
 
-_<HTML>_  
-_<BODY>_  
-_<APPLET CODE="Animation.class" WIDTH=300 HEIGHT=400>_  
-_</APPLET>_  
-_</BODY>_  
+_\<HTML>_  
+_\<BODY>_  
+_\<APPLET CODE="Animation.class" WIDTH=300 HEIGHT=400>_  
+_\</APPLET>_  
+_\</BODY>_  
  
 
 _**Animation.java**_
@@ -293,14 +293,14 @@ _import javax.swing.\*;_
  _// Update the position of the circle._  
  _void move() {_  
  _mCenter.x += miDX;_  
- _if (mCenter.x - miRadius < 0 ||_  
+ _if (mCenter.x - miRadius \< 0 ||_  
  _mCenter.x + miRadius > getSize().width) {_  
  _miDX = -miDX;_  
  _mCenter.x += 2\*miDX;_  
  _}_
 
  _mCenter.y += miDY;_  
- _if (mCenter.y - miRadius < 0 ||_  
+ _if (mCenter.y - miRadius \< 0 ||_  
  _mCenter.y + miRadius > getSize().height) {_  
  _miDY = -miDY;_  
  _mCenter.y += 2\*miDY;_  

@@ -20,22 +20,168 @@ _(Ref. Lippman 13.1.3, 17.2, 18.3)_
 Types of Access Privilege
 -------------------------
 
-| TYPE OF MEMBER | ACCESSIBLE IN CLASS DEFINITION | ACCESSIBLE BY OBJECTS |
-| --- | --- | --- |
-| private | yes | no |
-| protected | yes | no |
-| public | yes | yes 
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+TYPE OF MEMBER
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE IN CLASS DEFINITION
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY OBJECTS
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+private
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+protected
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+public
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
   
 
 Member Access Under Inheritance
 -------------------------------
 
-| INHERITANCE ACCESS SPECIFIER | TYPE OF MEMBER IN BASE CLASS | ACCESS LEVEL IN FIRST DERIVED CLASS | ACCESSIBLE BY FIRST DERIVED CLASS DEFINITION | ACCESSIBLE BY FIRST DERIVED CLASS OBJECTS |
-| --- | --- | --- | --- | --- |
-| private | private  {{< br >}}protected  {{< br >}}public | \-  {{< br >}}private  {{< br >}}private | no  {{< br >}}yes  {{< br >}}yes | no  {{< br >}}no  {{< br >}}no |
-| protected | private  {{< br >}}protected  {{< br >}}public | \-  {{< br >}}protected  {{< br >}}protected | no  {{< br >}}yes  {{< br >}}yes | no  {{< br >}}no  {{< br >}}no |
-| public | private  {{< br >}}protected  {{< br >}}public | \-  {{< br >}}protected  {{< br >}}public | no  {{< br >}}yes  {{< br >}}yes | no  {{< br >}}no  {{< br >}}yes 
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+INHERITANCE ACCESS SPECIFIER
+{{< thclose >}}
+{{< thopen >}}
+TYPE OF MEMBER IN BASE CLASS
+{{< thclose >}}
+{{< thopen >}}
+ACCESS LEVEL IN FIRST DERIVED CLASS
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY FIRST DERIVED CLASS DEFINITION
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY FIRST DERIVED CLASS OBJECTS
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+private
+{{< tdclose >}}
+{{< tdopen >}}
+private  
+protected  
+public
+{{< tdclose >}}
+{{< tdopen >}}
+\-  
+private  
+private
+{{< tdclose >}}
+{{< tdopen >}}
+no  
+yes  
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no  
+no  
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+protected
+{{< tdclose >}}
+{{< tdopen >}}
+private  
+protected  
+public
+{{< tdclose >}}
+{{< tdopen >}}
+\-  
+protected  
+protected
+{{< tdclose >}}
+{{< tdopen >}}
+no  
+yes  
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no  
+no  
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+public
+{{< tdclose >}}
+{{< tdopen >}}
+private  
+protected  
+public
+{{< tdclose >}}
+{{< tdopen >}}
+\-  
+protected  
+public
+{{< tdclose >}}
+{{< tdopen >}}
+no  
+yes  
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no  
+no  
+yes
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
   
 
@@ -57,7 +203,7 @@ _**list.h**_
 _#ifndef \_LIST\_H\__  
 _#define \_LIST\_H\__
 
-_#include <iostream.h>_  
+_#include \<iostream.h>_  
 _#ifndef TRUE_  
 _#define TRUE 1_  
 _#endif                          // TRUE_  
@@ -89,8 +235,8 @@ _class ListElement {_
  _// Grant special access privilege to class list._  
 _friend class List;_
 
- _// An operator<< which prints out a list._  
-_friend ostream& operator<<(ostream &os, const List& list);_  
+ _// An operator\<\< which prints out a list._  
+_friend ostream& operator\<\<(ostream &os, const List& list);_  
 _};_  
  
 
@@ -118,8 +264,8 @@ _class List {_
  _// Return a pointer to the smallest element. Does not remove it from the list._  
  _ListElement \*GetSmallest();_
 
- _// An operator<< which prints out the entire list._  
- _friend ostream& operator<<(ostream &os, const List& list);_  
+ _// An operator\<\< which prints out the entire list._  
+ _friend ostream& operator\<\<(ostream &os, const List& list);_  
 _};_
 
 _#endif                          // \_LIST\_H\__
@@ -213,8 +359,8 @@ _ListElement \*List::GetSmallest() {_
  _return pPrevious;_  
 _}_
 
-_// An operator<< which prints out the entire list._  
-_ostream& operator<<(ostream &os, const List& list) {_  
+_// An operator\<\< which prints out the entire list._  
+_ostream& operator\<\<(ostream &os, const List& list) {_  
  _ListElement \*pCurrent;_
 
  _for (pCurrent = list.mpHead; pCurrent ! = NULL;_  
@@ -253,7 +399,7 @@ _class Triangle : public ListElement {_
  _Triangle(float fBase, float fHeight) {mfBase = fBase; mfHeight = fHeight;}_  
  _~Triangle() {}_  
  _float ElementValue() {return (mfBase \* mfHeight / 2);}_  
- _void print() {cout << "Triangle: area = " << ElementValue() << endl;}_  
+ _void print() {cout \<\< "Triangle: area = " \<\< ElementValue() \<\< endl;}_  
 _};_  
  
 
@@ -268,7 +414,7 @@ _class Rectangle : public ListElement {_
  _Rectangle(float fBase, float fHeight) {mfBase = fBase; mfHeight = fHeight;}_  
  _~Rectangle() {}_  
  _float ElementValue() {return (mfBase \* mfHeight);}_  
- _void print() {cout << "Rectangle: area = " << ElementValue() << endl;}_  
+ _void print() {cout \<\< "Rectangle: area = " \<\< ElementValue() \<\< endl;}_  
 _};_  
    
  
@@ -284,7 +430,7 @@ _class Circle : public ListElement {_
  _Circle(float fRadius) {mfRadius = fRadius;}_  
  _~Circle() {}_  
  _float ElementValue() {return (PI \* mfRadius \* mfRadius);}_  
- _void print() {cout << "Circle: area = " << ElementValue() << endl;}_  
+ _void print() {cout \<\< "Circle: area = " \<\< ElementValue() \<\< endl;}_  
 _};_  
 _#endif                          // \_SHAPE\_H\__  
  
@@ -308,13 +454,13 @@ _main() {_
  _p = new Circle(1);_  
  _list.AddElement(p);_
 
- _cout << list << endl;_
+ _cout \<\< list \<\< endl;_
 
  _list.RemoveElement(list.GetLargest());_
 
- _cout << list << endl;_
+ _cout \<\< list \<\< endl;_
 
  _list.RemoveElement(list.GetSmallest());_
 
- _cout << list << endl;_  
+ _cout \<\< list \<\< endl;_  
 _}_

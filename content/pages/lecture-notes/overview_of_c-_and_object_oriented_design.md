@@ -39,7 +39,7 @@ Let's take a look two simple programs that print out the string, _Hello World!_
 
 Here is the procedural version of the program, written in C. The first statement is a preprocessor directive that tells the compiler to include the contents of the header file _stdio.h_. We include this file because it declares the existence of the built-in function, _printf()_. Every C program must have a top-level function named _main()_, which provides the entry point to the program. 
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _/\* The HelloWorld procedure definition. \*/  
 void HelloWorld() {  
@@ -59,7 +59,7 @@ Here is the object-based version of the program, written in C++. We have create
 It is important to understand the distinction between a class and an object. A class is merely a template for creating one or more objects. Our main program creates a single object named _a_ based on the class definition that we have provided. We then send the object a "print" message by selecting and invoking the _print()_ method using the **.** operator. We are able to access the _print()_ method in _main()_ because we have made it a _public_ member function of the class.  
  
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _// The HelloWorld class definition.  
 class HelloWorld {  
@@ -103,29 +103,162 @@ C++ built-in data types are similar to those found in C. The basic built-in typ
 Not all computing platforms agree on the actual size of the built-in data types, but the following table indicates the typical sizes on a 32-bit platform:  
  
 
-| BUILT-IN DATA TYPE | SIZE IN BYTES |
-| --- | --- |
-| char, unsigned char | 1 |
-| short, unsigned short | 2 |
-| wchar\_t, bool,  {{< br >}}int, unsigned int, float  | 4 |
-| double | 8 |
-| long double | 8 or 16 
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+BUILT-IN DATA TYPE
+{{< thclose >}}
+{{< thopen >}}
+SIZE IN BYTES
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+char, unsigned char
+{{< tdclose >}}
+{{< tdopen >}}
+1
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+short, unsigned short
+{{< tdclose >}}
+{{< tdopen >}}
+2
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+wchar\_t, bool,  
+int, unsigned int, float 
+{{< tdclose >}}
+{{< tdopen >}}
+4
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+double
+{{< tdclose >}}
+{{< tdopen >}}
+8
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+long double
+{{< tdclose >}}
+{{< tdopen >}}
+8 or 16
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
   
 
 A literal constant is a constant value of some type. Examples of literal constants are  
  
 
-| DATA TYPE | LITERAL CONSTANT |
-| --- | --- |
-| char | 'a', '7' |
-| wchar\_t | L'a', L'7' |
-| bool | true, false |
-| long int | 8L, 8l |
-| unsigned long int | 8UL, 8ul |
-| float | 2.718F, 2.718f |
-| double | 2.718, 1e-3 |
-| long double | 2.718L, 2.718l 
+{{< tableopen >}}
+{{< theadopen >}}
+
+
+{{< tropen >}}
+{{< thopen >}}
+DATA TYPE
+{{< thclose >}}
+{{< thopen >}}
+LITERAL CONSTANT
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+char
+{{< tdclose >}}
+{{< tdopen >}}
+'a', '7'
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+wchar\_t
+{{< tdclose >}}
+{{< tdopen >}}
+L'a', L'7'
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+bool
+{{< tdclose >}}
+{{< tdopen >}}
+true, false
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+long int
+{{< tdclose >}}
+{{< tdopen >}}
+8L, 8l
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+unsigned long int
+{{< tdclose >}}
+{{< tdopen >}}
+8UL, 8ul
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+float
+{{< tdclose >}}
+{{< tdopen >}}
+2.718F, 2.718f
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+double
+{{< tdclose >}}
+{{< tdopen >}}
+2.718, 1e-3
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+long double
+{{< tdclose >}}
+{{< tdopen >}}
+2.718L, 2.718l
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
   
 
@@ -166,7 +299,7 @@ _double \*p;_
 
 _p_ can now hold the memory address of a double object, such as _d_. We obtain the address of _d_ by applying the _address of_ operator, _&d_, and we then store it in _p_. Now that _p_ contains a valid address, we can refer to the object _d_ by applying the _dereference_ operator, _\*p_. Notice that we have used _\*_ in two different contexts, with different meanings in each case. The meaning of _&_ also depends on the context in which it is used.
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {  
     double d;         // An double object.  
@@ -197,7 +330,7 @@ _int& r = i;_
 
 Be careful not to confuse this use of _&_ with the _address of_ operator. Also note that, unlike a pointer, a reference must be initialized at the time it is defined.
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {  
     int i = 0;  
@@ -220,7 +353,7 @@ _int main() {
  _a = 3;  
     b = (float)a;                           /\* C-style cast operator. \*/  
     b = float(a);                          // Alternative type conversion notation allowed in C++.  
-    b = static\_cast<float>(a);    // A second alternative, allowed only in Standard C++.  
+    b = static\_cast\<float>(a);    // A second alternative, allowed only in Standard C++.  
 }_
 
 **_const_ Keyword**
@@ -236,12 +369,12 @@ const int j;            /\* This is illegal. \*/
 
 In C++, variable definitions may occur practically anywhere within a code block. A code block refers to any chunk of code that lies within a pair of scope delimiters, _{}_. For example, the following C program requires _i_ and _j_ to be defined at the top of the _main()_ function.
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {  
     int i, j;    /\* C requires variable definitions to be at the top of a code block. \*/_
 
- _for (i = 0; i < 5; i++) {  
+ _for (i = 0; i \< 5; i++) {  
          printf("Done with C\\n");  
     }  
     j = 10;  
@@ -249,10 +382,10 @@ _int main() {
 
 In the C++ version of the program, we can define the variables _i_ and _j_ when they are first used.
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {  
-    for (int i = 0; i < 5; i++) {         // In Standard C++, i is available anywhere within the for loop.  
+    for (int i = 0; i \< 5; i++) {         // In Standard C++, i is available anywhere within the for loop.  
         printf("Still learning C++\\n");  
      }  
     int j = 10;  
@@ -290,17 +423,17 @@ Coding styles tend to vary from one individual to another. While you are free t
 Here is an example of an inconsistent coding style. The curly braces in the two _for_ loops are aligned differently. The second style is usually preferred because it is more compact and it avoids excessive indentation.  
  
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {  
     int i;_
 
- _for (i = 0; i < 5; i++)  
+ _for (i = 0; i \< 5; i++)  
        {  
             printf("This convention aligns the curly braces.\\n");  
        }_
 
- _for (i =0; i < 5; i++) {  
+ _for (i =0; i \< 5; i++) {  
         printf("This is a more compact convention which aligns ");  
         printf("the closing brace with the for statement.\\n");  
     }  

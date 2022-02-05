@@ -268,7 +268,7 @@ Another type of image animation is _cartoon style animation_, in which a sequenc
 
  _// In initialization code._  
  _Image\[\] images = new Image\[10\];_  
- _for (int i = 1; i <= 10; i++) {_  
+ _for (int i = 1; i \<= 10; i++) {_  
  _images\[i-1\] = getImage(getCodeBase(), "images/duke/T"+i+".gif");_  
  _}_
 

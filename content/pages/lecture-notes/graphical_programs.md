@@ -65,19 +65,156 @@ The event listener registration and notification process takes place according t
 
 Here is a list of events, and their corresponding event types and event listener interfaces.
 
-| EVENT | EVENT TYPE | EVENT LISTENER INTERFACE |
-| --- | --- | --- |
-| Button click, menu selection, text field entry | ActionEvent | ActionListener |
-| Resizing, moving, showing or hiding a component | ComponentEvent | ComponentListener |
-| Mouse press, mouse release, mouse click, mouse enter, mouse exit | MouseEvent | MouseListener |
-| Mouse move, mouse drag | MouseEvent | MouseMotionListener |
-| Key press, key release | KeyEvent | KeyListener |
-| Gain keyboard focus, lose keyboard focus | FocusEvent | FocusListener |
-| Window closing, window iconified, window deiconified | WindowEvent | WindowListener |
-| Scrolling | AdjustmentEvent | AdjustmentListener |
-| Item selection e.g. checkbox, list item | ItemEvent | ItemListener |
-| Return key pressed | TextEvent | TextListener |
-| Adding/removing a component to/from a container | ContainerEvent | ContainerListener 
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+EVENT
+{{< thclose >}}
+{{< thopen >}}
+EVENT TYPE
+{{< thclose >}}
+{{< thopen >}}
+EVENT LISTENER INTERFACE
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Button click, menu selection, text field entry
+{{< tdclose >}}
+{{< tdopen >}}
+ActionEvent
+{{< tdclose >}}
+{{< tdopen >}}
+ActionListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Resizing, moving, showing or hiding a component
+{{< tdclose >}}
+{{< tdopen >}}
+ComponentEvent
+{{< tdclose >}}
+{{< tdopen >}}
+ComponentListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Mouse press, mouse release, mouse click, mouse enter, mouse exit
+{{< tdclose >}}
+{{< tdopen >}}
+MouseEvent
+{{< tdclose >}}
+{{< tdopen >}}
+MouseListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Mouse move, mouse drag
+{{< tdclose >}}
+{{< tdopen >}}
+MouseEvent
+{{< tdclose >}}
+{{< tdopen >}}
+MouseMotionListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Key press, key release
+{{< tdclose >}}
+{{< tdopen >}}
+KeyEvent
+{{< tdclose >}}
+{{< tdopen >}}
+KeyListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Gain keyboard focus, lose keyboard focus
+{{< tdclose >}}
+{{< tdopen >}}
+FocusEvent
+{{< tdclose >}}
+{{< tdopen >}}
+FocusListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Window closing, window iconified, window deiconified
+{{< tdclose >}}
+{{< tdopen >}}
+WindowEvent
+{{< tdclose >}}
+{{< tdopen >}}
+WindowListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Scrolling
+{{< tdclose >}}
+{{< tdopen >}}
+AdjustmentEvent
+{{< tdclose >}}
+{{< tdopen >}}
+AdjustmentListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Item selection e.g. checkbox, list item
+{{< tdclose >}}
+{{< tdopen >}}
+ItemEvent
+{{< tdclose >}}
+{{< tdopen >}}
+ItemListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Return key pressed
+{{< tdclose >}}
+{{< tdopen >}}
+TextEvent
+{{< tdclose >}}
+{{< tdopen >}}
+TextListener
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+Adding/removing a component to/from a container
+{{< tdclose >}}
+{{< tdopen >}}
+ContainerEvent
+{{< tdclose >}}
+{{< tdopen >}}
+ContainerListener
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
 The general approach to implementing an event listener is the same in every case.
 
@@ -259,8 +396,104 @@ It is also possible to set a _null_ layout manager and instead position componen
 
 Suppose we wish to position our two _JButtons_ side by side, with the _JTextArea_ positioned below them. We start by embedding the _JButtons_ within a _JPanel_, using _FlowLayout_ as the layout manager for the _JPanel_. The _JTextArea_ is best placed within a _JScrollPane_ , since this will permit scrolling when the amount of text exceeds the preferred size of the scroll pane. We can now attach the _JPanel_ and the _JScrollPane_ to the North and South borders of the _JFrame_, by using _BorderLayout_ as the layout manager for the _JFrame_. These containment relationships are illustrated below:
 
-|  {{< br >}}{{< br >}} _JFrame_ {{< br >}}{{< br >}} | |    {{< br >}}{{< br >}}   _JPanel_ (attached to the North border of _JFrame_)   {{< br >}}{{< br >}}    |
-|    {{< br >}}{{< br >}}     {{< br >}}    {{< br >}}{{< br >}}   |     {{< br >}}{{< br >}}    _JButton_    {{< br >}}{{< br >}}     |     {{< br >}}{{< br >}}    _JButton_    {{< br >}}{{< br >}}        {{< br >}}{{< br >}}   (laid out using _FlowLayout_)  {{< br >}}    {{< br >}}{{< br >}}     |   {{< br >}}{{< br >}}  _JScrollPane_ (attached to the South border of _JFrame_)  {{< br >}}{{< br >}}  |    {{< br >}}{{< br >}}     {{< br >}}_JTextArea_  {{< br >}}    {{< br >}}{{< br >}}      
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+_JFrame_
+
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+_JPanel_ (attached to the North border of _JFrame_)
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+  
+ 
+
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+_JButton_
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+_JButton_
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
+
+(laid out using _FlowLayout_)  
+ 
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+_JScrollPane_ (attached to the South border of _JFrame_)
+
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+  
+_JTextArea_  
+ 
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
 Here is the implementation:
 

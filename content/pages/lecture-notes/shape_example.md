@@ -204,7 +204,7 @@ _{_
  _shapeArray\[2\] = new Square(3,3,1);_
 
  _// Print out the array of Shapes. The length member gives the array size._  
- _for (int i = 0; i < shapeArray.length; i++) {_  
+ _for (int i = 0; i \< shapeArray.length; i++) {_  
  _shapeArray\[i\].print();_  
  _}_
 
@@ -217,7 +217,7 @@ _{_
  _// Note: here we have not provided a way to decrement the Shape counter._  
  _a = b = c = null;_  
  _s = null;_  
- _for (int i = 0; i < shapeArray.length; i++) {_  
+ _for (int i = 0; i \< shapeArray.length; i++) {_  
  _shapeArray\[i\] = null;_  
  _}_  
  _shapeArray = null;_  

@@ -144,21 +144,21 @@ _}_
 
 TestingJApplet.html
 
-_<html>_  
-_<head>_  
-_<title>JApplet Testing # 1</title>_  
-_</head>_  
-_<body>_
+_\<html>_  
+_\<head>_  
+_\<title>JApplet Testing # 1\</title>_  
+_\</head>_  
+_\<body>_
 
-_<center>_  
-_<h2>_  
-_<u>JApplet Example # 1</u></h2>_  
-_<hr><Applet code="TestingJApplet.class" WIDTH="500" HEIGHT="100"></Applet>_  
-_<hr></center>_
+_\<center>_  
+_\<h2>_  
+_\<u>JApplet Example # 1\</u>\</h2>_  
+_\<hr>\<Applet code="TestingJApplet.class" WIDTH="500" HEIGHT="100">\</Applet>_  
+_\<hr>\</center>_
 
-_<p><br>_  
-_</body>_  
-_</html>_
+_\<p>\<br>_  
+_\</body>_  
+_\</html>_
 
 _\> appletviewer TestingJApplet.html_
 

@@ -20,9 +20,113 @@ Topics
 Java® is an object-oriented programming language that resembles C++ in many respects. One of the major differences is that Java® programs are intended to be architecture-neutral i.e. a Java® program should, in theory, be able to run on a Unix® workstation, a PC or a Macintosh® _without recompilation._ In C++, we compiled our programs into machine-dependent _object code_ that was linked to produce an executable. By contrast, Java® programs are compiled into machine-independent _byte code_. The compiled program is then run within a Java® interpreter, which is responsible for executing the byte code instructions. The Java® interpreter is typically referred to as the _Java® Virtual Machine_, and it must be present on each computer that runs the program.  
  
 
-|  {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} Java® compiler {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} Java® interpreter {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}}  |
-|  {{< br >}}{{< br >}} _myprog.java_ {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} \--------------> {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} _myprog.class_ {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} \----------------> {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} Program output {{< br >}}{{< br >}}  |
-|  {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} _javac_ {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}} _java_  {{< br >}}_appletviewer_  {{< br >}}_netscape_ {{< br >}}{{< br >}}  |  {{< br >}}{{< br >}}  
+{{< tableopen >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+Java® compiler
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+Java® interpreter
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+_myprog.java_
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+\-------------->
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+_myprog.class_
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+\---------------->
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+Program output
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+_javac_
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+_java_  
+_appletviewer_  
+_netscape_
+
+
+{{< tdclose >}}
+{{< tdopen >}}
+
+
+
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
 Follow this link to see Sun Microsystems' overview: [About the Java® Technology](http://java.sun.com/docs/books/tutorial/getStarted/intro/definition.html)
 
@@ -119,20 +223,20 @@ _}_
 
 **Hello.html**
 
-_<HTML>_  
-_<HEAD>_  
-_<TITLE> A Simple Program </TITLE>_  
-_</HEAD>_
+_\<HTML>_  
+_\<HEAD>_  
+_\<TITLE> A Simple Program \</TITLE>_  
+_\</HEAD>_
 
-_<BODY>_  
+_\<BODY>_  
 _Here is the output of my program:_  
-_<APPLET CODE="HelloWorld.class" WIDTH=150 HEIGHT=25>_  
-_</APPLET>_  
-_</BODY>_  
-_</HTML>_ 
+_\<APPLET CODE="HelloWorld.class" WIDTH=150 HEIGHT=25>_  
+_\</APPLET>_  
+_\</BODY>_  
+_\</HTML>_ 
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 {{< anchor "4" >}}{{< /anchor >}}4\. Java Basics
 ------------------------------------------------
@@ -143,13 +247,66 @@ Java® has two main categories of data types: _primitive_ data types and _refere
 
 Here is a list of primitive data types.
 
-| PRIMITIVE DATA TYPE | SIZE IN BYTES / FORMAT |
-| --- | --- |
-| byte | 1 |
-| char, short | 2 |
-| int, float  | 4 |
-| long, double | 8 |
-| boolean | true or false 
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+PRIMITIVE DATA TYPE
+{{< thclose >}}
+{{< thopen >}}
+SIZE IN BYTES / FORMAT
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+byte
+{{< tdclose >}}
+{{< tdopen >}}
+1
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+char, short
+{{< tdclose >}}
+{{< tdopen >}}
+2
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+int, float 
+{{< tdclose >}}
+{{< tdopen >}}
+4
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+long, double
+{{< tdclose >}}
+{{< tdopen >}}
+8
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+boolean
+{{< tdclose >}}
+{{< tdopen >}}
+true or false
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
   
 
@@ -263,12 +420,103 @@ _class Access {_
  _packageMethod();                               // Access level is "package"._  
 _}_
 
-| ACCESS SPECIFIER | ACCESSIBLE BY CLASS DEFINITION | ACCESSIBLE BY SUBCLASS DEFINITION | ACCESSIBLE BY REST OF PACKAGE | ACCESSIBLE BY REST OF WORLD |
-| --- | --- | --- | --- | --- |
-| private | yes | no | no | no |
-| protected | yes | yes | yes | no |
-| public | yes | yes | yes | yes |
-| none i.e. package  {{< br >}} | yes | no | yes | no 
+{{< tableopen >}}
+{{< theadopen >}}
+{{< tropen >}}
+{{< thopen >}}
+ACCESS SPECIFIER
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY CLASS DEFINITION
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY SUBCLASS DEFINITION
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY REST OF PACKAGE
+{{< thclose >}}
+{{< thopen >}}
+ACCESSIBLE BY REST OF WORLD
+{{< thclose >}}
+
+{{< trclose >}}
+
+{{< theadclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+private
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+protected
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+public
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+
+{{< trclose >}}
+{{< tropen >}}
+{{< tdopen >}}
+none i.e. package  
+
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+{{< tdopen >}}
+yes
+{{< tdclose >}}
+{{< tdopen >}}
+no
+{{< tdclose >}}
+
+{{< trclose >}}
+
+{{< tableclose >}}
 
   
 
