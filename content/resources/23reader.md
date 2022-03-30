@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: 23reader.gif
 uid: 1cbba491-40a5-7fb2-5b61-8b2b09f8ad7f

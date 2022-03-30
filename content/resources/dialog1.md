@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: dialog1.gif
 uid: 0fc6b893-4460-22e2-b2e5-074d0bf41667

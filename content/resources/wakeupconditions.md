@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 resourcetype: Image
 title: wakeupconditions.gif
 uid: 76163ee3-f63d-c91c-3d9f-88be97281f08

@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: testingJApplet.gif
 uid: f6e73219-a907-2fa3-e012-35326d3e5c3d

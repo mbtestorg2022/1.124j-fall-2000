@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 resourcetype: Image
 title: canvas.gif
 uid: 962db16a-d746-33a5-7a2a-a1311a65fb65

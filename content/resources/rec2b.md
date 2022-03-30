@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: rec2b.jpg
 uid: aa95256f-9d16-3e59-da6d-6ae0f9e6d010

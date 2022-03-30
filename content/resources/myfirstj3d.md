@@ -7,6 +7,7 @@ image_metadata:
   caption: ''
   credit: ''
   image-alt: ''
+parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 resourcetype: Image
 title: myfirstj3d.gif
 uid: 6b5587cd-656d-0bd0-fb79-7b5e50916d6c
