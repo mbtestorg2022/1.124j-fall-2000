@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Makefile Primer
 uid: 6d7097bb-1b92-3e77-7a6b-fe4a29d36d40
@@ -56,7 +60,7 @@ Here are some points to remember:
 *   Comments start with a pound sign (#).
 *   Continuation of a line is denoted by a backslash (\\).
 *   Lines containing equals signs (=) are macro definitions (see next section).
-*   Each command line is typically executed in a separate Bourne shell i.e. _sh_1.
+*   Each command line is typically executed in a separate Bourne shell i.e. _sh_{{< sup "1" >}}.
 
 To execute more than one command line in the same shell, type them on the same line, separated by semicolons. Use a \\ to continue the line if necessary. For example,
 

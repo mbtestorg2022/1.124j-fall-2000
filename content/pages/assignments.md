@@ -1,5 +1,8 @@
 ---
 content_type: page
+learning_resource_types:
+- Assignments
+ocw_type: CourseSection
 title: Assignments
 uid: 1d7dc895-bfda-1074-c805-2b0dcdb37cee
 ---
@@ -74,7 +77,7 @@ Problem Set 6 ([PDF]({{< baseurl >}}/resources/ps6))
 {{< tropen >}}
 {{< tdopen >}}
 Problem Set 7 ([PDF]({{< baseurl >}}/resources/ps7))  
-Pole Data for Problem Set 7 ({{% resource_link "321319c4-f173-bf36-9d0c-b81b86c39c74" "DATA" %}})
+Pole Data for Problem Set 7 ([DATA]({{< baseurl >}}/resources/pole))
 {{< tdclose >}}
 {{< tdopen >}}
 ([PDF]({{< baseurl >}}/resources/sol7))

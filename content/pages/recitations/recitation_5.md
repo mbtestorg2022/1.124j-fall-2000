@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 5
 uid: 85e3e2b7-be39-f207-1805-efe724b15f5f
@@ -172,7 +176,7 @@ For all algorithms, presented below, assume that the _N_ data (elements) are sto
 {{< anchor "4" >}}{{< /anchor >}}4\. Insertion Sort
 ---------------------------------------------------
 
-This is an elementary algorithm with nested loops which cause an O(N2) time.
+This is an elementary algorithm with nested loops which cause an O(N{{< sup "2" >}}) time.
 
 Each element, starting from the element A\[0\], is considered one at a time and it is positioned in the proper ordered among those who have already been considered.
 
@@ -333,7 +337,7 @@ _3_
 5{{< anchor "5" >}}{{< /anchor >}}. Selection Sort
 --------------------------------------------------
 
-This is another elementary sorting algorithm with an O(N2) time.
+This is another elementary sorting algorithm with an O(N{{< sup "2" >}}) time.
 
 The element with the smallest value in the array is identified and placed in the first position. Then, the element with the smallest value among the remaining N-1 elements is selected and placed in the first position of the N-1 subarray. Continuing this procedure the array is sorted as shown by the following example.
 
@@ -497,7 +501,7 @@ Example:
 {{< anchor "6" >}}{{< /anchor >}}6\. Shellsort
 ----------------------------------------------
 
-Shellsort is an extension of insertion sort which can increase its efficiency. It allows exchanges of non adjacent elements. Although in some rare cases an O(N^2) time is required, the required time is usually O(N3/2).
+Shellsort is an extension of insertion sort which can increase its efficiency. It allows exchanges of non adjacent elements. Although in some rare cases an O(N^2) time is required, the required time is usually O(N{{< sup "3/2" >}}).
 
 First, a gap size is selected by dividing the number of the elements by 2. Then, the corresponding every "gap-size" elements are sorted. Next, the "gap-size" is divided by 2 and repeat the sorting of the elements at every "gap-size". Finally, the "gap-size" becomes equal to 1 and the entire array is sorted.
 
@@ -866,7 +870,7 @@ Example:
 {{< anchor "7" >}}{{< /anchor >}}7\. Quicksort
 ----------------------------------------------
 
-Quicksort is a very fast sorting algorithm which has O(N.lgN) average times. Its worst case performance is O(N2), but can be avoided with certain techniques. It is a "divide and conquer" algorithm for sorting. It partitions the data into two parts and then sort them independently.  
+Quicksort is a very fast sorting algorithm which has O(N.lgN) average times. Its worst case performance is O(N{{< sup "2" >}}), but can be avoided with certain techniques. It is a "divide and conquer" algorithm for sorting. It partitions the data into two parts and then sort them independently.  
 It uses in place sorting and a simple recursive structure.
 
 An element of the array, called _pivot_, is picked.
